@@ -10,7 +10,7 @@ class SolverKtTest {
     @ParameterizedTest
     @CsvSource("12,2", "14,2", "1969,654", "100756,33583")
     fun `fuel for module`(input: Long, expected: Long) {
-        assertThat(fuelFor(Mass(amount=input)), equalTo(Fuel(expected)))
+        assertThat(fuelFor(Mass(mass=input)), equalTo(Fuel(expected)))
     }
 
     @ParameterizedTest

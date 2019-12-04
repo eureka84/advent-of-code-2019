@@ -2,7 +2,7 @@ package com.eureka.puzzle01
 
 import com.eureka.puzzle01.Mass.Companion.ZERO
 
-fun fuelFor(module: Module): Fuel = Fuel(module.amount / 3 - 2)
+fun fuelFor(module: Module): Fuel = Fuel(module.mass / 3 - 2)
 
 fun createExtraFuelForGiven(fuelFor: (Mass) -> Mass): (Fuel) -> Fuel =
     { input: Fuel ->
@@ -36,7 +36,7 @@ fun main() {
         .split("\n")
         .map { Mass(it.toLong()) }
         .map { totalFuelFor(it) }
-        .sumByDouble { it.amount.toDouble() }
+        .sumByDouble { it.mass.toDouble() }
 
     println(result)
 }
